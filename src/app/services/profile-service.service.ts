@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { User } from '../homeclasses/user'; 
 import { Repos } from '../homeclasses/repos'; 
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileServiceService {
-  userInfor!: User;
-  repositoryInfor!: Repos;
+  userInfor: User;
+  repositoryInfor: Repos;
 
-  constructor(private http:HttpClientModule) { 
+  constructor(private http:HttpClient) { 
+    //for user
     this.userInfor= new User(
       '',
       '',
@@ -24,12 +26,60 @@ export class ProfileServiceService {
       new Date(),
 
     ),
+    //for repos
     this.repositoryInfor = new Repos(
       '',
       '',
       '',
       new Date(),
     )
-
   }
+//user data
+  getUserDataRequest(gitUsername:any){
+    interface ApiResponse{
+         login:string,
+         name:string,
+         avatar_url:string,
+         blog:string,
+         location:string,
+         bio:string,
+         public_repos:number,
+         followers:number,
+         following:number,
+         created_at:Date,
+    }
+    let userPromise = new Promise<void>((resolve, reject) => {
+      this.http.get<ApiResponse>(environment.apiUrl+ '/' + gitUsername + '?access_token=' + environment.apiKey ).toPromise().then((response: User)=>{
+        this.userInfor = response;
+        resolve();
+      },
+        (error: any)=>{
+        reject(error);
+        console.log(null);
+      })
+    })
+    return userPromise
+  }
+
+  //user repos
+  getReposRequest(gitUsername:any){
+    interface ApiResponse{
+       name: string,
+       html_url: string,
+       description: string,
+       created_at: Date,
+    }
+    let repositoryPromise = new Promise<void>((resolve, reject) => {
+      this.http.get<ApiResponse>(environment.apiUrl + '/'+ gitUsername + '/repos?sort=created&direction=desc?access_token='+ environment.apiKey).toPromise().then((response: Repos)=>{
+        this.repositoryInfor = response;
+        resolve();
+      },
+        (error: any)=>{
+        reject(error);
+        console.log(null);
+      })
+    })
+    return repositoryPromise
+  }
+
 }
