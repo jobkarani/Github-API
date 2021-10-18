@@ -2,14 +2,23 @@
     <div class="row">
         <div class="col-md-6">
             <div class="card">
-                {{userData?.login}} 
+                <div class="img">
                 <img [src]="userData?.avatar_url" class="card-img-top" alt="My profile picture">
+                </div>
+                <div class="name">
+                    <b>{{userData?.name}}</b>
+                </div>
+                <div class="log">
+                    {{userData?.login}}
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <div class="card" *ngFor="let repositories of repositories; let j = index">
-    {{repositories.name}} 
-    {{repositories.description}} 
+    <b><div class="rep">{{repositories.name}}</div></b>
+    <div class="rep">{{repositories.description}}</div>
+    <div class="rep">{{repositories.created_at}}</div>
+    <a href="{{repositories.html_url}}">See more</a>
 </div>

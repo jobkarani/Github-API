@@ -1,8 +1,7 @@
 
-<div class="container mt-3" >
+<div class="container " >
     <div class="row">
         <div class="col">
-            <div class="card">
                 <div class="card-body">
                     <form class="row g-3"  (ngSubmit)="getUserRepo()" #k="ngForm" id="form" >
                         <div class="col-md-6"  >
@@ -11,15 +10,25 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                                <input class="btn btn-primary" type="submit" value="search" >
+                            <input class="btn btn-primary" type="submit" value="search" >
                         </div>
                     </form>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="container" *ngFor="let repos of userRepo">
-        {{repos?.name}}
+       <div class="car">
+       <b>{{repos?.name}}</b> 
+       </div>
+       <div class="car">
+        {{repos?.description}}
+       </div>
+       <div class="car">
+        {{repos?.created_at}}
+       </div>
+       <div class="car">
+        <a href=" {{repos?.html_url}}">See more</a>
+       </div>
     </div>

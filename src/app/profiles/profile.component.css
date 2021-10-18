@@ -1,12 +1,14 @@
 
 .container{
     margin-top: 30px;
-    background-color: darksalmon;
+    background-color: #D8E9A8;
+    filter: drop-shadow(2px 4px 8px #585858);
 }
 img{
     height: 40%;
     width: 40%;
     border-radius: 50%;
+    filter: drop-shadow(2px 4px 8px #585858);
 }
 #user{
     margin-top: 20px;

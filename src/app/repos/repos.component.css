@@ -1,0 +1,10 @@
+.container{
+    margin-top: 30px;
+    background-color: #D8E9A8;
+    filter: drop-shadow(2px 4px 8px #585858);
+}
+a{
+    list-style: none;
+    text-decoration: none;
+    color: #700B97;
+}

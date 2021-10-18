@@ -1,12 +1,18 @@
 .container{
-    background-color: greenyellow;
+    background-color: #1E5128;
     margin-top: 10px;
+    filter: drop-shadow(2px 4px 8px #585858);
 }
 .navbar-nav{
-    background-color: orange;
+    background-color: #1E5128;
     margin-left: 400px;
+    filter: drop-shadow(2px 4px 8px #585858);
+
 }
 a{
-    color: black;
+    color: greenyellow;
     font-size: x-large;
+}
+a:hover{
+    color: black;
 }
