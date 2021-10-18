@@ -1,1 +1,15 @@
-<p>{{user.name}}</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                {{userData?.login}} 
+                <img [src]="userData?.avatar_url" class="card-img-top" alt="My profile picture">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" *ngFor="let repositories of repositories; let j = index">
+    {{repositories.name}} 
+    {{repositories.description}} 
+</div>

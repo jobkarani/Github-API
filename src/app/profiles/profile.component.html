@@ -1,4 +1,21 @@
-<div class="col-md-4">
-    <input class="form-control form-control-lg" type="text" placeholder="Username" aria-label=".form-control-lg example">
-    <input class="btn btn-primary" type="submit" value="search..." >
+<form (ngSubmit)="searchUser()" #j="ngForm" >
+    <div class="container">
+        <div class="col-md-4">
+            <input class="form-control form-control-lg" type="text" name="search" ngModel #search="ngModel" placeholder="Username" aria-label=".form-control-lg example">
+            <input class="btn btn-primary" type="submit" value="search..." >
+        </div>
+
+    </div>
+</form>
+
+<div class="container" >
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card" >
+                {{userData?.login}} 
+                <!-- <img src=[{{userData?.avatar_url}}] alt=""> -->
+                <img [src]="userData?.avatar_url" class="card-img-top" alt="My profile picture">
+            </div>
+        </div>
+    </div>
 </div>

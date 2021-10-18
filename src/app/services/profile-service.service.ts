@@ -26,7 +26,7 @@ export class ProfileServiceService {
       new Date(),
 
     ),
-    //for repos
+//for repos
     this.repositoryInfor = new Repos(
       '',
       '',
@@ -35,7 +35,7 @@ export class ProfileServiceService {
     )
   }
 //user data
-  getUserDataRequest(gitUsername:any){
+  getUserDataRequest(gitUser){
     interface ApiResponse{
          login:string,
          name:string,
@@ -49,20 +49,20 @@ export class ProfileServiceService {
          created_at:Date,
     }
     let userPromise = new Promise<void>((resolve, reject) => {
-      this.http.get<ApiResponse>(environment.apiUrl+ '/' + gitUsername + '?access_token=' + environment.apiKey ).toPromise().then((response: User)=>{
+      this.http.get<ApiResponse>(environment.apiUrl  +'/' + gitUser + '??access_token=' + environment.apiKey ).toPromise().then((response)=>{
         this.userInfor = response;
         resolve();
       },
-        (error: any)=>{
+        (error)=>{
         reject(error);
-        console.log(null);
+        console.log(error);
       })
     })
     return userPromise
   }
 
   //user repos
-  getReposRequest(gitUsername:any){
+  getReposRequest(gitUser){
     interface ApiResponse{
        name: string,
        html_url: string,
@@ -70,13 +70,13 @@ export class ProfileServiceService {
        created_at: Date,
     }
     let repositoryPromise = new Promise<void>((resolve, reject) => {
-      this.http.get<ApiResponse>(environment.apiUrl + '/'+ gitUsername + '/repos?sort=created&direction=desc?access_token='+ environment.apiKey).toPromise().then((response: Repos)=>{
+      this.http.get<ApiResponse>(environment.apiUrl + '/'+ gitUser + '/repos?sort=created&direction=desc??access_token='+ environment.apiKey).toPromise().then((response)=>{
         this.repositoryInfor = response;
         resolve();
       },
-        (error: any)=>{
+        (error)=>{
         reject(error);
-        console.log(null);
+        console.log(error);
       })
     })
     return repositoryPromise

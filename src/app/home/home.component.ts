@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Repos } from '../homeclasses/repos';
 import { User } from '../homeclasses/user';
 import { ProfileServiceService } from '../services/profile-service.service';
 
@@ -9,28 +8,29 @@ import { ProfileServiceService } from '../services/profile-service.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-    user!: User;
-    repositories!: Repos;
+    userData: User;
+    repositories:any;
     
-  constructor(private request : ProfileServiceService ) {}
+  constructor(private requestProfile : ProfileServiceService ) {}
 
-  getuser(gitUsername:any){
-    this.request.getUserDataRequest(gitUsername).then(
+  getuser(gitUser){
+    this.requestProfile.getUserDataRequest(gitUser).then(
       (response)=>{
-        this.user = this.request.userInfor;
+        this.userData = this.requestProfile.userInfor;
+        console.log(this.userData);
       },
-      (error:any) => {
+      (error) => {
         console.log(error);
       }
     );
   }
 
-  getRepos(gitUsername:any){
-    this.request.getReposRequest(gitUsername).then(
+  getRepos(gitUser){
+    this.requestProfile.getReposRequest(gitUser).then(
       (response)=>{
-        this.repositories = this.request.repositoryInfor;
+        this.repositories = this.requestProfile.repositoryInfor;
       },
-      (error:any) => {
+      (error) => {
         console.log(error);
       }
     );

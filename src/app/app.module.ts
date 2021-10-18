@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ReposComponent } from './repos/repos.component';
 import { ProfileComponent } from './profiles/profile.component';
 import { HomeComponent } from './home/home.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
