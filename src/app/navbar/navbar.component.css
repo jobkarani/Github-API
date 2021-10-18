@@ -1,0 +1,12 @@
+.container{
+    background-color: greenyellow;
+    margin-top: 10px;
+}
+.navbar-nav{
+    background-color: orange;
+    margin-left: 400px;
+}
+a{
+    color: black;
+    font-size: x-large;
+}
