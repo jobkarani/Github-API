@@ -23,7 +23,6 @@ export class ProfileServiceService {
       0,
       0,
       0,
-      new Date(),
 
     ),
 //for repos
@@ -46,7 +45,6 @@ export class ProfileServiceService {
          public_repos:number,
          followers:number,
          following:number,
-         created_at:Date,
     }
     let userPromise = new Promise<void>((resolve, reject) => {
       this.http.get<ApiResponse>(environment.apiUrl  +'/' + gitUser + '??access_token=' + environment.apiKey ).toPromise().then((response)=>{

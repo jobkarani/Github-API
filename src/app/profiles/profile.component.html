@@ -1,19 +1,37 @@
-<div class="container mt-3" >
+<div class="container " >
     <div class="row">
         <div class="col">
-            <div class="card">
                 <div class="card-body">
                     <form class="row g-3" (ngSubmit)="searchUser()" #j="ngForm"  >
                         <div class="col-md-6"  >
                             <div class="form-group">
-                                <input class="form-control form-control-lg" type="text" name="search" ngModel #search="ngModel" placeholder="Search Username..." aria-label=".form-control-lg example">
+                                <input class="form-control " type="text" name="search" ngModel #search="ngModel" placeholder="Search Username..." aria-label=".form-control-lg example">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <input class="btn btn-primary" type="submit" value="search" >
                         </div>
                     </form>
+                    <div class="cont" *ngIf="displayUser">
+                        <div class="row" id="user">
+                            <div class="col-md-6" >
+                                <div class="card" >
+                                    <img [src]="userData?.avatar_url" alt="xxx" >
+                                    <p>{{userData?.name}}</p>
+                                    <p>Email: {{userData?.blog}}</p> 
+                                   <p>Following: {{userData?.following}}</p>   
+                                   <p>Followers: {{userData?.followers}}</p> 
+                                </div>
+                                <div class="card">
+                                    <p>Name: {{userData?.login}}</p>
+                                    <p>Location: {{userData?.location}}</p>
+                                    <p>Repos: {{userData?.public_repos}}</p>
+                                    <p>About: {{userData?.bio}}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -21,12 +39,3 @@
 
 
 
-<div class="container" >
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card" >
-                {{userData?.login}} 
-            </div>
-        </div>
-    </div>
-</div>

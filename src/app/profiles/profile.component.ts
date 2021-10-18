@@ -23,12 +23,15 @@ export class ProfileComponent implements OnInit {
       (response)=>{
         this.userData = this.requestProfile.userInfor;
         console.log(this.userData);
+        this.displayUser=true;
       },
       (error) => {
         console.log(error);
+        
       }
+      
     );
-    this.displayUser=true;
+    
   }
 
     constructor(private requestProfile : ProfileServiceService ) {}

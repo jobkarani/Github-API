@@ -4,10 +4,10 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <form class="row g-3" >
+                    <form class="row g-3"  (ngSubmit)="getUserRepo()" #k="ngForm" id="form" >
                         <div class="col-md-6"  >
                             <div class="form-group">
-                                <input class="form-control form-control-lg" type="text" placeholder="Search user repos..." aria-label=".form-control-lg example">
+                                <input class="form-control form-control-lg" type="text" placeholder="Search user repos..." ngModel name="search" #seach="ngModel" aria-label=".form-control-lg example">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -18,4 +18,8 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="container" *ngFor="let repos of userRepo">
+        {{repos?.name}}
     </div>
