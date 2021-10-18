@@ -10,4 +10,10 @@ img{
 #user{
     display: flex;
     justify-content: space-around;
+    margin-top: 20px;
+    filter: drop-shadow(2px 4px 8px #585858);
+}
+.card{
+    display: flex;
+    justify-content: space-around;
 }
