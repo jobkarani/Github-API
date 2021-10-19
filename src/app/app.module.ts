@@ -9,6 +9,7 @@ import { ReposComponent } from './repos/repos.component';
 import { ProfileComponent } from './profiles/profile.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
+import { StrikethroDirective } from './strikethro.directive';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     ReposComponent,
     ProfileComponent,
     HomeComponent,
+    StrikethroDirective,
   ],
   imports: [
     BrowserModule,
