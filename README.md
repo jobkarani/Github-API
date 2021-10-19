@@ -12,7 +12,7 @@ Github-API is a web application whereby one can search for users github account 
 ## Screenshots
 <img src="src/assets/Screenshot from 2021-10-19 08-32-52.png">
 <img src="src/assets/Screenshot from 2021-10-19 08-32-35.png">
-<img src="src/assets/Screenshot from 2021-10-19 08-32-52.png">
+<img src="src/assets/Screenshot from 2021-10-19 08-32-19.png">
 
 ## Setup Requirements
 * Git
