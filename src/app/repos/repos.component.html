@@ -1,5 +1,5 @@
 
-<div class="container " >
+<div class="container" >
     <div class="row">
         <div class="col">
                 <div class="card-body">
@@ -16,19 +16,22 @@
                 </div>
             </div>
         </div>
+        <div class="row rep">
+            <div class="col-md-4 card ayub" *ngFor="let repos of userRepo">
+                <div class="car">
+                <h3><u>{{repos?.name}}</u></h3> 
+                </div>
+                <div class="car">
+                 {{repos?.description}}
+                </div>
+                <div class="car">
+                 {{repos?.created_at}}
+                </div>
+                <div class="car">
+                 <a href=" {{repos?.html_url}}" target="_blank"><i class="fas fa-hand-pointer">See Repo</i></a>
+                </div>
+             </div>
+        </div>
     </div>
 
-    <div class="container" *ngFor="let repos of userRepo">
-       <div class="car">
-       <b>{{repos?.name}}</b> 
-       </div>
-       <div class="car">
-        {{repos?.description}}
-       </div>
-       <div class="car">
-        {{repos?.created_at}}
-       </div>
-       <div class="car">
-        <a href=" {{repos?.html_url}}">See more</a>
-       </div>
-    </div>
+    
