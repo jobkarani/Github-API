@@ -6,19 +6,36 @@
                 <img [src]="userData?.avatar_url" class="card-img-top" alt="My profile picture">
                 </div>
                 <div class="name">
-                    <b>{{userData?.name}}</b>
+                    <h2> {{userData?.name}}</h2>
                 </div>
                 <div class="log">
-                    {{userData?.login}}
+                   Name: {{userData?.login}}
                 </div>
+                <div class="log">
+                    Location: {{userData?.location}}
+                </div>
+                <div class="log">
+                    
+                    Bio: {{userData?.bio}}
+                </div>
+                <div class="log">
+                    Email: {{userData?.blog}}
+                </div>
+                <div class="log">
+                    Followers: {{userData?.following}} || Following: {{userData?.followers}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col-md-4 card ayub" *ngFor="let repositories of repositories; let j = index">
+        <div class="">
+            <div class="rep"><u><h3 class="text-center">{{repositories.name}}</h3></u></div>
+            <div class="rep">{{repositories.description}}</div>
+            <div class="rep">{{repositories.created_at}}</div>
+            <a href="{{repositories.html_url}}" target="_blank"><i class="fas fa-hand-pointer">See Repo</i></a>
             </div>
         </div>
     </div>
 </div>
 
-<div class="card" *ngFor="let repositories of repositories; let j = index">
-    <b><div class="rep">{{repositories.name}}</div></b>
-    <div class="rep">{{repositories.description}}</div>
-    <div class="rep">{{repositories.created_at}}</div>
-    <a href="{{repositories.html_url}}">See more</a>
-</div>
