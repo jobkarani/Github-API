@@ -3,6 +3,11 @@ img{
     height: 90%;
     width: 90%;
 }
+h1{
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 .card{
     background-color: #4E9F3D;
     border-color: white;
@@ -11,6 +16,7 @@ img{
     padding: 1rem;
     color: white;
     align-items: center;
+    margin-top: 10px;
 }
 .card:hover{
     filter: drop-shadow(2px 4px 8px greenyellow);
