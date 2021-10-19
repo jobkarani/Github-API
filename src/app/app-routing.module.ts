@@ -5,6 +5,11 @@ import { ProfileComponent } from './profiles/profile.component';
 import { ReposComponent } from './repos/repos.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home'
+  },
   {path:'home',component:HomeComponent},
   {path:'repos',component:ReposComponent},
   {path:'profiles',component:ProfileComponent},
