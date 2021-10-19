@@ -24,7 +24,6 @@ export class ProfileServiceService {
       0,
       0,
       '',
-
     ),
 //for repos
     this.repositoryInfor = new Repos(
