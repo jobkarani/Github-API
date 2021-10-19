@@ -10,6 +10,7 @@ import { ProfileComponent } from './profiles/profile.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { StrikethroDirective } from './strikethro.directive';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { StrikethroDirective } from './strikethro.directive';
     ProfileComponent,
     HomeComponent,
     StrikethroDirective,
+    DateCountPipe,
   ],
   imports: [
     BrowserModule,
